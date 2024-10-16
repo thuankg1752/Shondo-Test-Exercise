@@ -1,0 +1,114 @@
+@color-background: #f8f8f8;
+@color-border: #ddd;
+@color-text: #333;
+@color-link: #007bff;
+@color-link-hover: darken(@color-link, 10%);
+
+.header {
+  &__container {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    padding: 16px;
+    background-color: @color-background;
+    border-bottom: 1px solid @color-border;
+    height: 66px;
+  }
+
+  &__logo {
+    font-size: 24px;
+    font-weight: bold;
+    color: @color-text;
+  }
+
+  &__nav {
+    &-list {
+      list-style: none;
+      padding: 0;
+      margin: 0;
+      display: flex;
+      @media (max-width: 768px) {
+        opacity: 0;
+        transform: translateX(-10px);
+        transition: opacity 0.3s ease, transform 0.3s ease;
+        flex-direction: column;
+        width: 100%;
+        position: absolute;
+        top: 60px;
+        left: 0;
+        background-color: @color-background;
+        z-index: 1;
+        gap: 20px;
+        font-size: 25px;
+      }
+    }
+
+    &-item {
+      margin-left: 24px;
+
+      &-link {
+        text-decoration: none;
+        color: @color-link;
+
+        &:hover {
+          text-decoration: none;
+          color: @color-link-hover;
+        }
+      }
+    }
+
+    &--open {
+      &-list {
+        opacity: 1;
+        transform: translateX(0);
+      }
+    }
+  }
+
+  &__hamburger {
+    display: none;
+    flex-direction: column;
+    cursor: pointer;
+    position: relative;
+    &-line {
+      width: 25px;
+      height: 3px;
+      background-color: @color-text;
+      margin: 4px 0;
+      transition: all 0.3s ease;
+
+
+      &--top {
+        transform: rotate(45deg) translate(4px, 4px);
+        @media (max-width: 768px) {
+          position: absolute;
+          right: 0;
+          top: -5px;
+        }
+      }
+
+      &--middle {
+        opacity: 0;
+      }
+
+      &--bottom {
+        transform: rotate(-45deg) translate(4px, -4px);
+        @media (max-width: 768px) {
+          position: absolute;
+          right: 0;
+          top: 7px;
+        }
+      }
+    }
+
+    @media (max-width: 768px) {
+      display: flex;
+    }
+  }
+
+  @media (max-width: 768px) {
+    .header__nav {
+      display: none;
+    }
+  }
+}
