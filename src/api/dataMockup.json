@@ -1,0 +1,852 @@
+[
+  {
+    "id": 1,
+    "image": [
+      "https://dummyimage.com/600x400/33cc99/fff",
+      "https://dummyimage.com/600x400/3399ff/000",
+      "https://dummyimage.com/600x400/ff6699/000"
+    ],
+    "name": "Product 1",
+    "description": "Description for Product 1",
+    "category": "Category A",
+    "brand": "Brand X",
+    "isHot": true,
+    "price": 1000000,
+    "discountPrice": 900000,
+    "colors": "red",
+    "sizes":  36
+  },
+  {
+    "id": 2,
+    "image": [
+      "https://dummyimage.com/600x400/33cc99/fff",
+      "https://dummyimage.com/600x400/3399ff/000",
+      "https://dummyimage.com/600x400/ff6699/000"
+    ],
+    "name": "Product 2",
+    "description": "Description for Product 2",
+    "category": "Category B",
+    "brand": "Brand Y",
+    "isHot": false,
+    "price": 2000000,
+    "discountPrice": 1900000,
+    "colors": "white",
+    "sizes":  38
+  },
+  {
+    "id": 3,
+    "image": [
+      "https://dummyimage.com/600x400/33cc99/fff",
+      "https://dummyimage.com/600x400/3399ff/000",
+      "https://dummyimage.com/600x400/ff6699/000"
+    ],
+    "name": "Product 3",
+    "description": "Description for Product 3",
+    "category": "Category C",
+    "brand": "Brand Z",
+    "isHot": true,
+    "price": 3000000,
+    "discountPrice": 2900000,
+    "colors": "white",
+    "sizes":  38
+  },
+  {
+    "id": 4,
+    "image": [
+      "https://dummyimage.com/600x400/33cc99/fff",
+      "https://dummyimage.com/600x400/3399ff/000",
+      "https://dummyimage.com/600x400/ff6699/000"
+    ],
+    "name": "Product 4",
+    "description": "Description for Product 4",
+    "category": "Category A",
+    "brand": "Brand X",
+    "isHot": false,
+    "price": 4000000,
+    "discountPrice": 3900000,
+    "colors": "black",
+    "sizes":  37
+  },
+  {
+    "id": 5,
+    "image": [
+      "https://dummyimage.com/600x400/33cc99/fff",
+      "https://dummyimage.com/600x400/3399ff/000",
+      "https://dummyimage.com/600x400/ff6699/000"
+    ],
+    "name": "Product 5",
+    "description": "Description for Product 5",
+    "category": "Category B",
+    "brand": "Brand Y",
+    "isHot": true,
+    "price": 5000000,
+    "discountPrice": 4900000,
+    "colors": "black",
+    "sizes":  37
+  },
+  {
+    "id": 6,
+    "image": [
+      "https://dummyimage.com/600x400/33cc99/fff",
+      "https://dummyimage.com/600x400/3399ff/000",
+      "https://dummyimage.com/600x400/ff6699/000"
+    ],
+    "name": "Product 6",
+    "description": "Description for Product 6",
+    "category": "Category C",
+    "brand": "Brand Z",
+    "isHot": false,
+    "price": 6000000,
+    "discountPrice": 5900000,
+    "colors": "white",
+    "sizes":  38
+  },
+  {
+    "id": 7,
+    "image": [
+      "https://dummyimage.com/600x400/33cc99/fff",
+      "https://dummyimage.com/600x400/3399ff/000",
+      "https://dummyimage.com/600x400/ff6699/000"
+    ],
+    "name": "Product 7",
+    "description": "Description for Product 7",
+    "category": "Category A",
+    "brand": "Brand X",
+    "isHot": true,
+    "price": 7000000,
+    "discountPrice": 6900000,
+    "colors": "red",
+    "sizes":  36
+  },
+  {
+    "id": 8,
+    "image": [
+      "https://dummyimage.com/600x400/33cc99/fff",
+      "https://dummyimage.com/600x400/3399ff/000",
+      "https://dummyimage.com/600x400/ff6699/000"
+    ],
+    "name": "Product 8",
+    "description": "Description for Product 8",
+    "category": "Category B",
+    "brand": "Brand Y",
+    "isHot": false,
+    "price": 8000000,
+    "discountPrice": 7900000,
+    "colors": "black",
+    "sizes":  37
+  },
+  {
+    "id": 9,
+    "image": [
+      "https://dummyimage.com/600x400/33cc99/fff",
+      "https://dummyimage.com/600x400/3399ff/000",
+      "https://dummyimage.com/600x400/ff6699/000"
+    ],
+    "name": "Product 9",
+    "description": "Description for Product 9",
+    "category": "Category C",
+    "brand": "Brand Z",
+    "isHot": true,
+    "price": 9000000,
+    "discountPrice": 8900000,
+    "colors": "white",
+    "sizes":  38
+  },
+  {
+    "id": 10,
+    "image": [
+      "https://dummyimage.com/600x400/33cc99/fff",
+      "https://dummyimage.com/600x400/3399ff/000",
+      "https://dummyimage.com/600x400/ff6699/000"
+    ],
+    "name": "Product 10",
+    "description": "Description for Product 10",
+    "category": "Category A",
+    "brand": "Brand X",
+    "isHot": false,
+    "price": 10000000,
+    "discountPrice": 9900000,
+    "colors": "red",
+    "sizes":  36
+  },
+  {
+    "id": 11,
+    "image": [
+      "https://dummyimage.com/600x400/33cc99/fff",
+      "https://dummyimage.com/600x400/3399ff/000",
+      "https://dummyimage.com/600x400/ff6699/000"
+    ],
+    "name": "Product 11",
+    "description": "Description for Product 11",
+    "category": "Category B",
+    "brand": "Brand Y",
+    "isHot": true,
+    "price": 11000000,
+    "discountPrice": 10900000,
+    "colors": "black",
+    "sizes":  37
+  },
+  {
+    "id": 12,
+    "image": [
+      "https://dummyimage.com/600x400/33cc99/fff",
+      "https://dummyimage.com/600x400/3399ff/000",
+      "https://dummyimage.com/600x400/ff6699/000"
+    ],
+    "name": "Product 12",
+    "description": "Description for Product 12",
+    "category": "Category C",
+    "brand": "Brand Z",
+    "isHot": false,
+    "price": 12000000,
+    "discountPrice": 11900000,
+    "colors": "red",
+    "sizes":  36
+  },
+  {
+    "id": 13,
+    "image": [
+      "https://dummyimage.com/600x400/33cc99/fff",
+      "https://dummyimage.com/600x400/3399ff/000",
+      "https://dummyimage.com/600x400/ff6699/000"
+    ],
+    "name": "Product 13",
+    "description": "Description for Product 13",
+    "category": "Category A",
+    "brand": "Brand X",
+    "isHot": true,
+    "price": 13000000,
+    "discountPrice": 12900000,
+    "colors": "black",
+    "sizes":  37
+  },
+  {
+    "id": 14,
+    "image": [
+      "https://dummyimage.com/600x400/33cc99/fff",
+      "https://dummyimage.com/600x400/3399ff/000",
+      "https://dummyimage.com/600x400/ff6699/000"
+    ],
+    "name": "Product 14",
+    "description": "Description for Product 14",
+    "category": "Category B",
+    "brand": "Brand Y",
+    "isHot": false,
+    "price": 14000000,
+    "discountPrice": 13900000,
+    "colors": "red",
+    "sizes":  36
+  },
+  {
+    "id": 15,
+    "image": [
+      "https://dummyimage.com/600x400/33cc99/fff",
+      "https://dummyimage.com/600x400/3399ff/000",
+      "https://dummyimage.com/600x400/ff6699/000"
+    ],
+    "name": "Product 15",
+    "description": "Description for Product 15",
+    "category": "Category C",
+    "brand": "Brand Z",
+    "isHot": true,
+    "price": 15000000,
+    "discountPrice": 14900000,
+    "colors": "red",
+    "sizes":  36
+  },
+  {
+    "id": 16,
+    "image": [
+      "https://dummyimage.com/600x400/33cc99/fff",
+      "https://dummyimage.com/600x400/3399ff/000",
+      "https://dummyimage.com/600x400/ff6699/000"
+    ],
+    "name": "Product 16",
+    "description": "Description for Product 16",
+    "category": "Category A",
+    "brand": "Brand X",
+    "isHot": false,
+    "price": 16000000,
+    "discountPrice": 15900000,
+    "colors": "white",
+    "sizes":  38
+  },
+  {
+    "id": 17,
+    "image": [
+      "https://dummyimage.com/600x400/33cc99/fff",
+      "https://dummyimage.com/600x400/3399ff/000",
+      "https://dummyimage.com/600x400/ff6699/000"
+    ],
+    "name": "Product 17",
+    "description": "Description for Product 17",
+    "category": "Category B",
+    "brand": "Brand Y",
+    "isHot": true,
+    "price": 17000000,
+    "discountPrice": 16900000,
+    "colors": "white",
+    "sizes":  38
+  },
+  {
+    "id": 18,
+    "image": [
+      "https://dummyimage.com/600x400/33cc99/fff",
+      "https://dummyimage.com/600x400/3399ff/000",
+      "https://dummyimage.com/600x400/ff6699/000"
+    ],
+    "name": "Product 18",
+    "description": "Description for Product 18",
+    "category": "Category C",
+    "brand": "Brand Z",
+    "isHot": false,
+    "price": 18000000,
+    "discountPrice": 17900000,
+    "colors": "white",
+    "sizes":  38
+  },
+  {
+    "id": 19,
+    "image": [
+      "https://dummyimage.com/600x400/33cc99/fff",
+      "https://dummyimage.com/600x400/3399ff/000",
+      "https://dummyimage.com/600x400/ff6699/000"
+    ],
+    "name": "Product 19",
+    "description": "Description for Product 19",
+    "category": "Category A",
+    "brand": "Brand X",
+    "isHot": true,
+    "price": 19000000,
+    "discountPrice": 18900000,
+    "colors": "white",
+    "sizes":  38
+  },
+  {
+    "id": 20,
+    "image": [
+      "https://dummyimage.com/600x400/33cc99/fff",
+      "https://dummyimage.com/600x400/3399ff/000",
+      "https://dummyimage.com/600x400/ff6699/000"
+    ],
+    "name": "Product 20",
+    "description": "Description for Product 20",
+    "category": "Category B",
+    "brand": "Brand Y",
+    "isHot": false,
+    "price": 20000000,
+    "discountPrice": 19900000,
+    "colors": "red",
+    "sizes":  36
+  },
+  {
+    "id": 21,
+    "image": [
+      "https://dummyimage.com/600x400/33cc99/fff",
+      "https://dummyimage.com/600x400/3399ff/000",
+      "https://dummyimage.com/600x400/ff6699/000"
+    ],
+    "name": "Product 21",
+    "description": "Description for Product 21",
+    "category": "Category C",
+    "brand": "Brand Z",
+    "isHot": true,
+    "price": 21000000,
+    "discountPrice": 20900000,
+    "colors": "black",
+    "sizes":  37
+  },
+  {
+    "id": 22,
+    "image": [
+      "https://dummyimage.com/600x400/33cc99/fff",
+      "https://dummyimage.com/600x400/3399ff/000",
+      "https://dummyimage.com/600x400/ff6699/000"
+    ],
+    "name": "Product 22",
+    "description": "Description for Product 22",
+    "category": "Category A",
+    "brand": "Brand X",
+    "isHot": false,
+    "price": 22000000,
+    "discountPrice": 21900000,
+    "colors": "red",
+    "sizes":  36
+  },
+  {
+    "id": 23,
+    "image": [
+      "https://dummyimage.com/600x400/33cc99/fff",
+      "https://dummyimage.com/600x400/3399ff/000",
+      "https://dummyimage.com/600x400/ff6699/000"
+    ],
+    "name": "Product 23",
+    "description": "Description for Product 23",
+    "category": "Category B",
+    "brand": "Brand Y",
+    "isHot": true,
+    "price": 23000000,
+    "discountPrice": 22900000,
+    "colors": "black",
+    "sizes":  37
+  },
+  {
+    "id": 24,
+    "image": [
+      "https://dummyimage.com/600x400/33cc99/fff",
+      "https://dummyimage.com/600x400/3399ff/000",
+      "https://dummyimage.com/600x400/ff6699/000"
+    ],
+    "name": "Product 24",
+    "description": "Description for Product 24",
+    "category": "Category C",
+    "brand": "Brand Z",
+    "isHot": false,
+    "price": 24000000,
+    "discountPrice": 23900000,
+    "colors": "white",
+    "sizes":  38
+  },
+  {
+    "id": 25,
+    "image": [
+      "https://dummyimage.com/600x400/33cc99/fff",
+      "https://dummyimage.com/600x400/3399ff/000",
+      "https://dummyimage.com/600x400/ff6699/000"
+    ],
+    "name": "Product 25",
+    "description": "Description for Product 25",
+    "category": "Category A",
+    "brand": "Brand X",
+    "isHot": true,
+    "price": 25000000,
+    "discountPrice": 24900000,
+    "colors": "black",
+    "sizes":  37
+  },
+  {
+    "id": 26,
+    "image": [
+      "https://dummyimage.com/600x400/33cc99/fff",
+      "https://dummyimage.com/600x400/3399ff/000",
+      "https://dummyimage.com/600x400/ff6699/000"
+    ],
+    "name": "Product 26",
+    "description": "Description for Product 26",
+    "category": "Category B",
+    "brand": "Brand Y",
+    "isHot": false,
+    "price": 26000000,
+    "discountPrice": 25900000,
+    "colors": "red",
+    "sizes":  36
+  },
+  {
+    "id": 27,
+    "image": [
+      "https://dummyimage.com/600x400/33cc99/fff",
+      "https://dummyimage.com/600x400/3399ff/000",
+      "https://dummyimage.com/600x400/ff6699/000"
+    ],
+    "name": "Product 27",
+    "description": "Description for Product 27",
+    "category": "Category C",
+    "brand": "Brand Z",
+    "isHot": true,
+    "price": 27000000,
+    "discountPrice": 26900000,
+    "colors": "red",
+    "sizes":  36
+  },
+  {
+    "id": 28,
+    "image": [
+      "https://dummyimage.com/600x400/33cc99/fff",
+      "https://dummyimage.com/600x400/3399ff/000",
+      "https://dummyimage.com/600x400/ff6699/000"
+    ],
+    "name": "Product 28",
+    "description": "Description for Product 28",
+    "category": "Category A",
+    "brand": "Brand X",
+    "isHot": false,
+    "price": 28000000,
+    "discountPrice": 27900000,
+    "colors": "black",
+    "sizes":  37
+  },
+  {
+    "id": 29,
+    "image": [
+      "https://dummyimage.com/600x400/33cc99/fff",
+      "https://dummyimage.com/600x400/3399ff/000",
+      "https://dummyimage.com/600x400/ff6699/000"
+    ],
+    "name": "Product 29",
+    "description": "Description for Product 29",
+    "category": "Category B",
+    "brand": "Brand Y",
+    "isHot": true,
+    "price": 29000000,
+    "discountPrice": 28900000,
+    "colors": "white",
+    "sizes":  38
+  },
+  {
+    "id": 30,
+    "image": [
+      "https://dummyimage.com/600x400/33cc99/fff",
+      "https://dummyimage.com/600x400/3399ff/000",
+      "https://dummyimage.com/600x400/ff6699/000"
+    ],
+    "name": "Product 30",
+    "description": "Description for Product 30",
+    "category": "Category C",
+    "brand": "Brand Z",
+    "isHot": false,
+    "price": 30000000,
+    "discountPrice": 29900000,
+    "colors": "white",
+    "sizes":  38
+  },
+  {
+    "id": 31,
+    "image": [
+      "https://dummyimage.com/600x400/33cc99/fff",
+      "https://dummyimage.com/600x400/3399ff/000",
+      "https://dummyimage.com/600x400/ff6699/000"
+    ],
+    "name": "Product 31",
+    "description": "Description for Product 31",
+    "category": "Category A",
+    "brand": "Brand X",
+    "isHot": true,
+    "price": 31000000,
+    "discountPrice": 30900000,
+    "colors": "white",
+    "sizes":  38
+  },
+  {
+    "id": 32,
+    "image": [
+      "https://dummyimage.com/600x400/33cc99/fff",
+      "https://dummyimage.com/600x400/3399ff/000",
+      "https://dummyimage.com/600x400/ff6699/000"
+    ],
+    "name": "Product 32",
+    "description": "Description for Product 32",
+    "category": "Category B",
+    "brand": "Brand Y",
+    "isHot": false,
+    "price": 32000000,
+    "discountPrice": 31900000,
+    "colors": "white",
+    "sizes":  38
+  },
+  {
+    "id": 33,
+    "image": [
+      "https://dummyimage.com/600x400/33cc99/fff",
+      "https://dummyimage.com/600x400/3399ff/000",
+      "https://dummyimage.com/600x400/ff6699/000"
+    ],
+    "name": "Product 33",
+    "description": "Description for Product 33",
+    "category": "Category C",
+    "brand": "Brand Z",
+    "isHot": true,
+    "price": 33000000,
+    "discountPrice": 32900000,
+    "colors": "black",
+    "sizes":  37
+  },
+  {
+    "id": 34,
+    "image": [
+      "https://dummyimage.com/600x400/33cc99/fff",
+      "https://dummyimage.com/600x400/3399ff/000",
+      "https://dummyimage.com/600x400/ff6699/000"
+    ],
+    "name": "Product 34",
+    "description": "Description for Product 34",
+    "category": "Category A",
+    "brand": "Brand X",
+    "isHot": false,
+    "price": 34000000,
+    "discountPrice": 33900000,
+    "colors": "black",
+    "sizes":  37
+  },
+  {
+    "id": 35,
+    "image": [
+      "https://dummyimage.com/600x400/33cc99/fff",
+      "https://dummyimage.com/600x400/3399ff/000",
+      "https://dummyimage.com/600x400/ff6699/000"
+    ],
+    "name": "Product 35",
+    "description": "Description for Product 35",
+    "category": "Category B",
+    "brand": "Brand Y",
+    "isHot": true,
+    "price": 35000000,
+    "discountPrice": 34900000,
+    "colors": "black",
+    "sizes":  37
+  },
+  {
+    "id": 36,
+    "image": [
+      "https://dummyimage.com/600x400/33cc99/fff",
+      "https://dummyimage.com/600x400/3399ff/000",
+      "https://dummyimage.com/600x400/ff6699/000"
+    ],
+    "name": "Product 36",
+    "description": "Description for Product 36",
+    "category": "Category C",
+    "brand": "Brand Z",
+    "isHot": false,
+    "price": 36000000,
+    "discountPrice": 35900000,
+    "colors": "black",
+    "sizes":  37
+  },
+  {
+    "id": 37,
+    "image": [
+      "https://dummyimage.com/600x400/33cc99/fff",
+      "https://dummyimage.com/600x400/3399ff/000",
+      "https://dummyimage.com/600x400/ff6699/000"
+    ],
+    "name": "Product 37",
+    "description": "Description for Product 37",
+    "category": "Category A",
+    "brand": "Brand X",
+    "isHot": true,
+    "price": 37000000,
+    "discountPrice": 36900000,
+    "colors": "black",
+    "sizes":  37
+  },
+  {
+    "id": 38,
+    "image": [
+      "https://dummyimage.com/600x400/33cc99/fff",
+      "https://dummyimage.com/600x400/3399ff/000",
+      "https://dummyimage.com/600x400/ff6699/000"
+    ],
+    "name": "Product 38",
+    "description": "Description for Product 38",
+    "category": "Category B",
+    "brand": "Brand Y",
+    "isHot": false,
+    "price": 38000000,
+    "discountPrice": 37900000,
+    "colors": "black",
+    "sizes":  37
+  },
+  {
+    "id": 39,
+    "image": [
+      "https://dummyimage.com/600x400/33cc99/fff",
+      "https://dummyimage.com/600x400/3399ff/000",
+      "https://dummyimage.com/600x400/ff6699/000"
+    ],
+    "name": "Product 39",
+    "description": "Description for Product 39",
+    "category": "Category C",
+    "brand": "Brand Z",
+    "isHot": true,
+    "price": 39000000,
+    "discountPrice": 38900000,
+    "colors": "black",
+    "sizes":  37
+  },
+  {
+    "id": 40,
+    "image": [
+      "https://dummyimage.com/600x400/33cc99/fff",
+      "https://dummyimage.com/600x400/3399ff/000",
+      "https://dummyimage.com/600x400/ff6699/000"
+    ],
+    "name": "Product 40",
+    "description": "Description for Product 40",
+    "category": "Category A",
+    "brand": "Brand X",
+    "isHot": false,
+    "price": 40000000,
+    "discountPrice": 39900000,
+    "colors": "black",
+    "sizes":  37
+  },
+  {
+    "id": 41,
+    "image": [
+      "https://dummyimage.com/600x400/33cc99/fff",
+      "https://dummyimage.com/600x400/3399ff/000",
+      "https://dummyimage.com/600x400/ff6699/000"
+    ],
+    "name": "Product 41",
+    "description": "Description for Product 41",
+    "category": "Category B",
+    "brand": "Brand Y",
+    "isHot": true,
+    "price": 41000000,
+    "discountPrice": 40900000,
+    "colors": "black",
+    "sizes":  37
+  },
+  {
+    "id": 42,
+    "image": [
+      "https://dummyimage.com/600x400/33cc99/fff",
+      "https://dummyimage.com/600x400/3399ff/000",
+      "https://dummyimage.com/600x400/ff6699/000"
+    ],
+    "name": "Product 42",
+    "description": "Description for Product 42",
+    "category": "Category C",
+    "brand": "Brand Z",
+    "isHot": false,
+    "price": 42000000,
+    "discountPrice": 41900000,
+    "colors": "red",
+    "sizes":  36
+  },
+  {
+    "id": 43,
+    "image": [
+      "https://dummyimage.com/600x400/33cc99/fff",
+      "https://dummyimage.com/600x400/3399ff/000",
+      "https://dummyimage.com/600x400/ff6699/000"
+    ],
+    "name": "Product 43",
+    "description": "Description for Product 43",
+    "category": "Category A",
+    "brand": "Brand X",
+    "isHot": true,
+    "price": 43000000,
+    "discountPrice": 42900000,
+    "colors": "red",
+    "sizes":  36
+  },
+  {
+    "id": 44,
+    "image": [
+      "https://dummyimage.com/600x400/33cc99/fff",
+      "https://dummyimage.com/600x400/3399ff/000",
+      "https://dummyimage.com/600x400/ff6699/000"
+    ],
+    "name": "Product 44",
+    "description": "Description for Product 44",
+    "category": "Category B",
+    "brand": "Brand Y",
+    "isHot": false,
+    "price": 44000000,
+    "discountPrice": 43900000,
+    "colors": "red",
+    "sizes":  36
+  },
+  {
+    "id": 45,
+    "image": [
+      "https://dummyimage.com/600x400/33cc99/fff",
+      "https://dummyimage.com/600x400/3399ff/000",
+      "https://dummyimage.com/600x400/ff6699/000"
+    ],
+    "name": "Product 45",
+    "description": "Description for Product 45",
+    "category": "Category C",
+    "brand": "Brand Z",
+    "isHot": true,
+    "price": 45000000,
+    "discountPrice": 44900000,
+    "colors": "white",
+    "sizes":  38
+  },
+  {
+    "id": 46,
+    "image": [
+      "https://dummyimage.com/600x400/33cc99/fff",
+      "https://dummyimage.com/600x400/3399ff/000",
+      "https://dummyimage.com/600x400/ff6699/000"
+    ],
+    "name": "Product 46",
+    "description": "Description for Product 46",
+    "category": "Category A",
+    "brand": "Brand X",
+    "isHot": false,
+    "price": 46000000,
+    "discountPrice": 45900000,
+    "colors": "black",
+    "sizes":  37
+  },
+  {
+    "id": 47,
+    "image": [
+      "https://dummyimage.com/600x400/33cc99/fff",
+      "https://dummyimage.com/600x400/3399ff/000",
+      "https://dummyimage.com/600x400/ff6699/000"
+    ],
+    "name": "Product 47",
+    "description": "Description for Product 47",
+    "category": "Category B",
+    "brand": "Brand Y",
+    "isHot": true,
+    "price": 47000000,
+    "discountPrice": 46900000,
+    "colors": "white",
+    "sizes":  38
+  },
+  {
+    "id": 48,
+    "image": [
+      "https://dummyimage.com/600x400/33cc99/fff",
+      "https://dummyimage.com/600x400/3399ff/000",
+      "https://dummyimage.com/600x400/ff6699/000"
+    ],
+    "name": "Product 48",
+    "description": "Description for Product 48",
+    "category": "Category C",
+    "brand": "Brand Z",
+    "isHot": false,
+    "price": 48000000,
+    "discountPrice": 47900000,
+    "colors": "white",
+    "sizes":  38
+  },
+  {
+    "id": 49,
+    "image": [
+      "https://dummyimage.com/600x400/33cc99/fff",
+      "https://dummyimage.com/600x400/3399ff/000",
+      "https://dummyimage.com/600x400/ff6699/000"
+    ],
+    "name": "Product 49",
+    "description": "Description for Product 49",
+    "category": "Category A",
+    "brand": "Brand X",
+    "isHot": true,
+    "price": 49000000,
+    "discountPrice": 48900000,
+    "colors": "white",
+    "sizes":  38
+  },
+  {
+    "id": 50,
+    "image": [
+      "https://dummyimage.com/600x400/33cc99/fff",
+      "https://dummyimage.com/600x400/3399ff/000",
+      "https://dummyimage.com/600x400/ff6699/000"
+    ],
+    "name": "Product 50",
+    "description": "Description for Product 50",
+    "category": "Category B",
+    "brand": "Brand Y",
+    "isHot": false,
+    "price": 50000000,
+    "discountPrice": 49900000,
+    "colors": "red",
+    "sizes":  36
+  }
+]
