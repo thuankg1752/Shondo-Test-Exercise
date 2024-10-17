@@ -4,6 +4,7 @@ import { SuspenseWrapper } from '../../components/loading/SuspenseWrap';
 import ProtectRoute from '../../components/ProtectRoutes';
 import AuthRoute from '../../components/AuthRoutes';
 import { CLIENT_ROUTE_PATH } from '../../constant/routes';
+import ListProduct from '../../components/Products/ListProduct';
 
 const NotFound = React.lazy(() => import('../../components/NotFound'));
 
@@ -15,10 +16,9 @@ export const ClientRoutes = () => (
     {/* AuthRoute */}
     {/* using AuthRoute when the route doesnt need user to sign in to access it */}
     <Route element={<AuthRoute />}>
-      <Route path={`/${CLIENT_ROUTE_PATH.PRODUCT}`} element={<SuspenseWrapper component={<>
-
-      Home
-      </>} />} />
+      <Route
+        path={`/${CLIENT_ROUTE_PATH.PRODUCT}`} element={<SuspenseWrapper component={<ListProduct />} />}
+      />
       {/*<Route path={`/${CLIENT_ROUTE_PATH.PRODUCT_DETAIL}/:id`} element={<SuspenseWrapper component={<Register />} />} />*/}
 
     </Route>
