@@ -82,17 +82,17 @@ function HeaderHamburger() {
     }}
     >
       {toggle ? (
-        <>
+        <React.Fragment>
           <span className="header__hamburger-line header__hamburger-line--top"></span>
           <span className="header__hamburger-line header__hamburger-line--middle"></span>
           <span className="header__hamburger-line header__hamburger-line--bottom"></span>
-        </>
+        </React.Fragment>
       ) : (
-        <>
+        <React.Fragment>
           <span className="header__hamburger-line"></span>
           <span className="header__hamburger-line"></span>
           <span className="header__hamburger-line"></span>
-        </>
+        </React.Fragment>
       )}
     </div>
   );

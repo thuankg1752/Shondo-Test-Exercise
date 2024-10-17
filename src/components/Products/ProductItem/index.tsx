@@ -10,7 +10,7 @@ interface IProductItemProps {
 
 const ProductItem: React.FC<IProductItemProps> = ({ ...props }: IProductItemProps) => {
   const { productItem } = props;
-  const { id, image, name, description, category, brand, isHot, price, discountPrice, colors, sizes } = productItem;
+  const { id, image, name, description, price, discountPrice } = productItem;
 
   return (
     <div id={id.toString()} className="product-item__container">
@@ -20,7 +20,10 @@ const ProductItem: React.FC<IProductItemProps> = ({ ...props }: IProductItemProp
       <div className="product-item__info-container">
         <a href={CLIENT_ROUTE_PATH.PRODUCT_DETAIL(id)} className="product-item__name">{name}</a>
         <p className="product-item__description">{description}</p>
-        <p className="product-item__price">{formatToVND(price)} <span className="product-item__discount-percent">{valueDiscountPercent(price, discountPrice)}</span></p>
+        <div className="product-item__price-box">
+          <p className="product-item__price">{formatToVND(price)}</p>
+          <span className="product-item__discount-percent">{valueDiscountPercent(price, discountPrice)}</span>
+        </div>
         <p className="product-item__price-discount">{formatToVND(discountPrice)}</p>
       </div>
     </div>

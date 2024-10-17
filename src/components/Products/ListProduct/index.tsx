@@ -1,21 +1,34 @@
 import React, { useEffect, useState } from 'react';
 import ProductItem from '../ProductItem';
-import { IProductItem } from '../../../constant/interface.ts';
-import { ItemPerPage } from '../../../constant';
+import { IFilterValues, IProductItem } from '../../../constant/interface.ts';
+import { ITEM_PER_PAGE, SORT_TYPE, TIME_LOADING } from '../../../constant';
 import './ListProduct.less';
 import Spin from '../../Spin';
+import { Pagination } from '../../Pagination';
+import ProductFilter from '../ProductFilter';
+import ProductSortPrice from '../ProductSortPrice';
 
 const ListProduct: React.FC = () => {
   const [productItems, setProductItems] = useState<IProductItem[]>([]);
+  const [productFromApi, setProductFromApi] = useState<IProductItem[]>([]);
   const [currentPage, setCurrentPage] = useState<number>(1);
   const [loading, setLoading] = useState<boolean>(false);
-
+  const [loadingMainContent, setLoadingMainContent] = useState<boolean>(false);
+  const [sortBy, setSortBy] = useState('default');
+  const [filterValue, setFilterValue] = useState<IFilterValues>(
+    {
+      brand: [],
+      category: [],
+      color: [],
+      size: []
+    }
+  );
   // logic pagination
-  const indexOfLastItem: number = currentPage * ItemPerPage;
-  const indexOfFirstItem: number = indexOfLastItem - ItemPerPage;
+  const indexOfLastItem: number = currentPage * ITEM_PER_PAGE;
+  const indexOfFirstItem: number = indexOfLastItem - ITEM_PER_PAGE;
   const currentItems: IProductItem[] = productItems.slice(indexOfFirstItem, indexOfLastItem);
 
-  // const totalPages: number = Math.ceil(productItems.length / ItemPerPage);
+  const totalPages: number = Math.ceil(productItems.length / ITEM_PER_PAGE);
 
   useEffect(() => {
     let isMounted = true;
@@ -29,39 +42,100 @@ const ListProduct: React.FC = () => {
       }).then(json => {
         if (isMounted) {
           setProductItems(json);
+          setProductFromApi(json);
         }
       }).catch(err => console.log(err)).finally(() => {
         setLoading(false);
       });
-    }, 1000);
+    }, TIME_LOADING * 2);
 
     return () => {
       isMounted = false;
     };
   }, []);
 
+  useEffect(() => {
+    if (sortBy !== 'default') {
+      setLoadingMainContent(true);
+      setTimeout(() => {
+        switch (sortBy) {
+          case SORT_TYPE.ASC:
+            setProductItems([...productItems].sort((a, b) => a.price - b.price));
+            break;
+          case SORT_TYPE.DESC:
+            setProductItems([...productItems].sort((a, b) => b.price - a.price));
+            break;
+          default:
+            break;
+        }
+        setLoadingMainContent(false);
+      }, TIME_LOADING);
+    }
+  }, [sortBy]);
+
+  useEffect(() => {
+    if (filterValue.brand.length > 0 || filterValue.category.length > 0 || filterValue.color.length > 0 || filterValue.size.length > 0) {
+      setLoadingMainContent(true);
+      setTimeout(() => {
+        const filterItems: IProductItem[] = productFromApi.filter((productItem) => {
+          return (
+            ( filterValue.brand.length === 0 || filterValue.brand.includes(productItem.brand) ) &&
+            ( filterValue.category.length === 0 || filterValue.category.includes(productItem.category) ) &&
+            ( filterValue.color.length === 0 || filterValue.color.includes(productItem.colors) ) &&
+            ( filterValue.size.length === 0 || filterValue.size.includes(productItem.sizes) )
+          );
+        });
+        setProductItems(filterItems);
+        setLoadingMainContent(false);
+        setCurrentPage(1);
+      }, TIME_LOADING);
+    } else {
+      setLoadingMainContent(true);
+      setTimeout(() => {
+        setProductItems(productFromApi);
+        setLoadingMainContent(false);
+        setCurrentPage(1);
+      }, TIME_LOADING);
+    }
+  }, [filterValue]);
+
   const handlePageChange = (newPage: number) => {
-    setLoading(true);
+    setLoadingMainContent(true);
     setTimeout(() => {
       setCurrentPage(newPage);
-      setLoading(false);
-    }, 1000);
+      setLoadingMainContent(false);
+    }, 300);
   };
+
+
   return (
-    <>{loading ? <Spin /> :
+    <React.Fragment>{loading ? <Spin /> :
       <section className="list-product__container">
-        <div>
-        {/* filter */}
-        </div>
-        <div>
+        <ProductFilter
+          isLoadingFilter={loadingMainContent}
+          filterValue={filterValue}
+          setFilterValue={setFilterValue}
+        />
+        <div className="list-product__block">
+          <div className="list-product__sort-bar">
+            <p className="list-product__sort-title">View {ITEM_PER_PAGE} in {productItems.length} products </p>
+            <ProductSortPrice sortBy={sortBy} setSortBy={setSortBy} />
+          </div>
           <div className="list-product__item">
-            {currentItems.map((productItem) => (
+            {loadingMainContent ? <Spin /> : currentItems.map((productItem) => (
               <ProductItem productItem={productItem} key={productItem.id} />
             ))}
+
           </div>
+          {!loadingMainContent && <Pagination
+            handlePageChange={handlePageChange}
+            loading={loading}
+            currentPage={currentPage}
+            totalPages={totalPages}
+          />}
         </div>
       </section>}
-    </>
+    </React.Fragment>
   );
 };
 

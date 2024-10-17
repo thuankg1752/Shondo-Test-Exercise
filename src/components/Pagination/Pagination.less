@@ -1,0 +1,23 @@
+@import '../../style/variables.less';
+
+.pagination{
+  &__container{
+    display: flex;
+    justify-content: center;
+    gap: 8px;
+    margin-top: 16px;
+  }
+  &__per-page{
+    font-size: 14px;
+    color: @color-text;
+    width: 25px;
+    height: 25px;
+    border: unset;
+    background: unset;
+    cursor: pointer;
+    &--active{
+      background-color: @color-link;
+      color: white;
+    }
+  }
+}
