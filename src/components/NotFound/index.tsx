@@ -1,6 +1,6 @@
 import React from 'react';
 
 const NotFound: React.FC = () => {
-  return <>Not Found</>;
+  return <React.Fragment>Not Found</React.Fragment>;
 };
 export default NotFound;

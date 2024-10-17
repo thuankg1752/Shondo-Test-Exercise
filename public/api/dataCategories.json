@@ -1,0 +1,22 @@
+{
+  "color": [
+    "red",
+    "white",
+    "black"
+  ],
+  "size": [
+    36,
+    38,
+    37
+  ],
+  "brand": [
+    "Brand X",
+    "Brand Y",
+    "Brand Z"
+  ],
+  "category": [
+    "Category A",
+    "Category B",
+    "Category C"
+]
+}

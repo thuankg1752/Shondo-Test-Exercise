@@ -1,0 +1,45 @@
+@import "../../../style/variables";
+.filter-product{
+  &__container{
+    width: 296px;
+  }
+  &__category{
+    display: flex;
+    gap: 16px;
+    padding: 16px;
+  }
+  &__item{
+    &-block{
+      position: relative;
+      width: 100%;
+    }
+    &-filer{
+      border: 1px solid @product-item-border-color;
+      border-radius: 5px;
+      min-width: 40px;
+      min-height: 40px;
+      padding: 5px;
+      display: flex;
+      flex-wrap: wrap;
+      justify-content: center;
+      align-items: center;
+      width: 100%;
+      cursor: pointer;
+      box-shadow: @filter-box-shadow;
+      &--active{
+        &::before{
+          content: "";
+          position: absolute;
+          width: 5px;
+          height: 11px;
+          border-right: 3px solid #60ba75;
+          border-bottom: 3px solid #60ba75;
+          transform: rotate(45deg);
+          margin-bottom: 5px;
+          top: 0;
+          right: 8px;
+        }
+      }
+    }
+  }
+}

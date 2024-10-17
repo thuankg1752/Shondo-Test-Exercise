@@ -7,6 +7,11 @@
     flex-direction: column;
     border: 1px solid @product-item-border-color;
     border-radius: 10px;
+    transition: all 0.3s;
+    box-shadow: @product-item-box-shadow;
+    &:hover{
+      scale: 1.05;
+    }
   }
 
   &__info-container {
@@ -63,6 +68,11 @@
       color: @product-item-price-discount;
       text-decoration: line-through;
       margin-left: 5px;
+    }
+    &-box{
+      display: flex;
+      align-items: center;
+      gap: 10px;
     }
   }
 }
