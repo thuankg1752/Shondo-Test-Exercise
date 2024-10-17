@@ -1,18 +1,18 @@
-@color-background: #f8f8f8;
-@color-border: #ddd;
-@color-text: #333;
-@color-link: #007bff;
-@color-link-hover: darken(@color-link, 10%);
-
+@import '../../style/variables.less';
 .header {
   &__container {
+    padding: 16px;
+    background-color: @header-color-background;
+    border-bottom: 1px solid @header-color-border;
+    height: 66px;
+    box-shadow: @color-box-shadow;
+  }
+  &__content{
     display: flex;
     justify-content: space-between;
     align-items: center;
-    padding: 16px;
-    background-color: @color-background;
-    border-bottom: 1px solid @color-border;
-    height: 66px;
+    max-width: 1280px;
+    margin: 0 auto;
   }
 
   &__logo {
@@ -36,7 +36,7 @@
         position: absolute;
         top: 60px;
         left: 0;
-        background-color: @color-background;
+        background-color: @header-color-background;
         z-index: 1;
         gap: 20px;
         font-size: 25px;
@@ -52,7 +52,7 @@
 
         &:hover {
           text-decoration: none;
-          color: @color-link-hover;
+          color: @header-color-link-hover;
         }
       }
     }

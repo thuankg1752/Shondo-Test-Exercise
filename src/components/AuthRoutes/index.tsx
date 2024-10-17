@@ -1,6 +1,7 @@
 import { Outlet } from 'react-router-dom';
 import { Header } from '../Header';
 import Footer from '../Footer';
+import HomeApp from '../HomeApp';
 
 const AuthRoute = () => {
   return (
@@ -10,7 +11,9 @@ const AuthRoute = () => {
         <Header.Nav />
         <Header.Hamburger />
       </Header>
-      <Outlet />
+      <HomeApp>
+        <Outlet />
+      </HomeApp>
       <Footer />
     </>
   );

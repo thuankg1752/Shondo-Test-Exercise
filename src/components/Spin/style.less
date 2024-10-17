@@ -1,22 +1,24 @@
-@circle-size: 10px;
-@loading-background-color: #000;
-@circle-color: #fff;
-@animation-duration: 1.1s;
+@import '../../style/variables.less';
 
-.loading__box {
-  padding-top: 20%;
+
+.loading{
+  &__box {
+    padding-top: 20%;
+    padding-bottom: 20%;
+  }
+  &__checked {
+    position: absolute;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+  }
 }
 
-.loading__checked {
-  position: absolute;
-  top: 42%;
-  left: 42%;
-}
 
 .parent {
   position: relative;
-  height: 150px;
-  width: 150px;
+  height: 120px;
+  width: 120px;
   margin: auto;
   background-color: @loading-background-color;
   border-radius: 50%;
@@ -108,7 +110,7 @@
   }
 
   50% {
-    background-color: #696969;
+    background-color: #B1DDF6;
   }
 
   100% {

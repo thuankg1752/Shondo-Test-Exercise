@@ -12,8 +12,8 @@ const Footer: React.FC = () => {
         <div className="footer__section">
           <h3 className="footer__title">Policies</h3>
           <ul className="footer__list">
-            <li className="footer__item"><a href="/privacy-policy">Privacy Policy</a></li>
-            <li className="footer__item"><a href="/terms-of-service">Terms of Service</a></li>
+            <li className="footer__list-item"><a href="/privacy-policy">Privacy Policy</a></li>
+            <li className="footer__list-item"><a href="/terms-of-service">Terms of Service</a></li>
           </ul>
         </div>
       </div>

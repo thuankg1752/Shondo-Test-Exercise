@@ -43,7 +43,10 @@ export function Header(props: HeaderProps) {
   return (
     <header className="header__container">
       <HeaderContext.Provider value={{ toggle, setToggle }}>
-        {props.children}
+        <div className="header__content">
+          {props.children}
+        </div>
+
       </HeaderContext.Provider>
     </header>
 
