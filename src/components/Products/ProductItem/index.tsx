@@ -14,11 +14,11 @@ const ProductItem: React.FC<IProductItemProps> = ({ ...props }: IProductItemProp
 
   return (
     <div id={id.toString()} className="product-item__container">
-      <a href={CLIENT_ROUTE_PATH.PRODUCT_DETAIL(id)}>
+      <a href={`${CLIENT_ROUTE_PATH.PRODUCT_DETAIL}/${id}`}>
         <img src={`${image[0]}`} alt={`${image[0]}`} loading="lazy" className="product-item__image" />
       </a>
       <div className="product-item__info-container">
-        <a href={CLIENT_ROUTE_PATH.PRODUCT_DETAIL(id)} className="product-item__name">{name}</a>
+        <a href={`${CLIENT_ROUTE_PATH.PRODUCT_DETAIL}/${id}`} className="product-item__name">{name}</a>
         <p className="product-item__description">{description}</p>
         <div className="product-item__price-box">
           <p className="product-item__price">{formatToVND(price)}</p>

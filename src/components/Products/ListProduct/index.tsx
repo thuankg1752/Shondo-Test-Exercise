@@ -5,7 +5,7 @@ import { ITEM_PER_PAGE, SORT_TYPE, TIME_LOADING } from '../../../constant';
 import './ListProduct.less';
 import Spin from '../../Spin';
 import { Pagination } from '../../Pagination';
-import ProductFilter from '../ProductFilter';
+import { ProductFilter } from '../ProductFilter';
 import ProductSortPrice from '../ProductSortPrice';
 
 const ListProduct: React.FC = () => {
@@ -31,7 +31,6 @@ const ListProduct: React.FC = () => {
   const totalPages: number = Math.ceil(productItems.length / ITEM_PER_PAGE);
 
   useEffect(() => {
-    let isMounted = true;
     setLoading(true);
     setTimeout(() => {
       fetch(`/api/dataMockup.json`).then(response => {
@@ -40,18 +39,13 @@ const ListProduct: React.FC = () => {
         }
         return response.json();
       }).then(json => {
-        if (isMounted) {
-          setProductItems(json);
-          setProductFromApi(json);
-        }
+        setProductItems(json);
+        setProductFromApi(json);
+
       }).catch(err => console.log(err)).finally(() => {
         setLoading(false);
       });
     }, TIME_LOADING * 2);
-
-    return () => {
-      isMounted = false;
-    };
   }, []);
 
   useEffect(() => {
@@ -81,8 +75,8 @@ const ListProduct: React.FC = () => {
           return (
             ( filterValue.brand.length === 0 || filterValue.brand.includes(productItem.brand) ) &&
             ( filterValue.category.length === 0 || filterValue.category.includes(productItem.category) ) &&
-            ( filterValue.color.length === 0 || filterValue.color.includes(productItem.colors) ) &&
-            ( filterValue.size.length === 0 || filterValue.size.includes(productItem.sizes) )
+            ( filterValue.color.length === 0 || filterValue.color.some(color => productItem.colors.includes(color)) ) &&
+            ( filterValue.size.length === 0 || filterValue.size.some(size => productItem.sizes.includes(size)) )
           );
         });
         setProductItems(filterItems);

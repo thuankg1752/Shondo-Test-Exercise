@@ -3,7 +3,7 @@ import { ICategories, IProductFilterProps, TItemFilter } from '../../../constant
 import './ProductFilter.less';
 
 
-const ProductFilter: React.FC<IProductFilterProps> = ({ ...props }: IProductFilterProps) => {
+export function ProductFilter ({ ...props }: IProductFilterProps) {
 
   const { filterValue, isLoadingFilter, setFilterValue } = props;
   const [dataCategories, setDataCategories] = useState<ICategories>(
@@ -37,6 +37,7 @@ const ProductFilter: React.FC<IProductFilterProps> = ({ ...props }: IProductFilt
           isBackground={true}
           filterValue={filterValue}
           isLoadingFilter={isLoadingFilter}
+          isSelectOne={false}
           setFilterValue={setFilterValue}
         />
         <FilterItem
@@ -45,6 +46,7 @@ const ProductFilter: React.FC<IProductFilterProps> = ({ ...props }: IProductFilt
           isBackground={false}
           filterValue={filterValue}
           isLoadingFilter={isLoadingFilter}
+          isSelectOne={false}
           setFilterValue={setFilterValue}
         />
         <FilterItem
@@ -53,6 +55,7 @@ const ProductFilter: React.FC<IProductFilterProps> = ({ ...props }: IProductFilt
           isBackground={false}
           filterValue={filterValue}
           isLoadingFilter={isLoadingFilter}
+          isSelectOne={false}
           setFilterValue={setFilterValue}
         />
         <FilterItem
@@ -61,41 +64,51 @@ const ProductFilter: React.FC<IProductFilterProps> = ({ ...props }: IProductFilt
           isBackground={false}
           filterValue={filterValue}
           isLoadingFilter={isLoadingFilter}
+          isSelectOne={false}
           setFilterValue={setFilterValue}
         />
       </div>
     </div>
   );
 };
-export default ProductFilter;
 
 const FilterItem: React.FC<TItemFilter> = ({ ...props }: TItemFilter) => {
-  const { dataMap, title, isBackground, filterValue, isLoadingFilter, setFilterValue } = props;
+  const { dataMap, title, isBackground, filterValue, isLoadingFilter,isSelectOne, setFilterValue } = props;
+  const handleFilter = (value: string|number) => {
+    if (isSelectOne){
+      setFilterValue({
+        ...filterValue,
+        [title.toLowerCase()]: filterValue[title.toLowerCase()].includes(value) ? [] : [value]
+      });
+    }
+    else {
+      const newValues = filterValue[title.toLowerCase()].includes(value)
+        ? filterValue[title.toLowerCase()].filter((item: string) => item !== value)
+        : [...filterValue[title.toLowerCase()], value];
+      setFilterValue({
+        ...filterValue,
+        [title.toLowerCase()]: newValues
+      });
+    }
+  }
   return (
     <React.Fragment>
       <h2>
         {title}
       </h2>
       <div className="filter-product__category">
-        {Array.isArray(dataMap) && dataMap.map((value: string, index: number) => (
+        {Array.isArray(dataMap) && dataMap.map((value: string|number, index: number) => (
           <div className="filter-product__item-block" key={`${value}_${index}`}>
             <button
               type={'button'}
               disabled={isLoadingFilter}
-              style={{ backgroundColor: isBackground ? value : 'white' }}
+              style={{ backgroundColor: isBackground ? value.toString() : 'white' }}
               onClick={() => {
-                const newValues = filterValue[title.toLowerCase()].includes(value)
-                  ? filterValue[title.toLowerCase()].filter((item: string) => item !== value)
-                  : [...filterValue[title.toLowerCase()], value];
-                setFilterValue({
-                  ...filterValue,
-                  [title.toLowerCase()]: newValues
-                });
+                handleFilter(value);
               }}
               className={`filter-product__item-filer ${filterValue[title.toLowerCase()].includes(value) ?
                 'filter-product__item-filer--active' :
                 ''}`}
-
             >
               {!isBackground && <div title={value.toString()}>{value}</div>}
             </button>
@@ -105,4 +118,4 @@ const FilterItem: React.FC<TItemFilter> = ({ ...props }: TItemFilter) => {
     </React.Fragment>
   );
 };
-
+ProductFilter.FilterItem = FilterItem;

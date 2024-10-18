@@ -5,6 +5,7 @@ import ProtectRoute from '../../components/ProtectRoutes';
 import AuthRoute from '../../components/AuthRoutes';
 import { CLIENT_ROUTE_PATH } from '../../constant/routes';
 import ListProduct from '../../components/Products/ListProduct';
+import ProductDetail from '../../components/ProductDetail';
 
 const NotFound = React.lazy(() => import('../../components/NotFound'));
 
@@ -19,7 +20,7 @@ export const ClientRoutes = () => (
       <Route
         path={`/${CLIENT_ROUTE_PATH.PRODUCT}`} element={<SuspenseWrapper component={<ListProduct />} />}
       />
-      {/*<Route path={`/${CLIENT_ROUTE_PATH.PRODUCT_DETAIL}/:id`} element={<SuspenseWrapper component={<Register />} />} />*/}
+      <Route path={`/${CLIENT_ROUTE_PATH.PRODUCT_DETAIL}/:id`} element={<SuspenseWrapper component={<ProductDetail />} />} />
 
     </Route>
     {/* ProtectRoute */}
