@@ -1,5 +1,9 @@
+@import "../../style/_mixins";
 .home-app__container{
   max-width: 1280px;
   margin: 0 auto;
   padding: 60px 0;
+  .media(laptop, {
+    padding: 40px 10px;
+  });
 }

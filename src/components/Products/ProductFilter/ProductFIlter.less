@@ -1,19 +1,23 @@
 @import "../../../style/variables";
-.filter-product{
-  &__container{
+
+.filter-product {
+  &__container {
     width: 296px;
   }
-  &__category{
+
+  &__category {
     display: flex;
     gap: 16px;
     padding: 16px;
   }
-  &__item{
-    &-block{
+
+  &__item {
+    &-block {
       position: relative;
       width: 100%;
     }
-    &-filer{
+
+    &-filer {
       border: 1px solid @product-item-border-color;
       border-radius: 5px;
       min-width: 40px;
@@ -26,8 +30,9 @@
       width: 100%;
       cursor: pointer;
       box-shadow: @filter-box-shadow;
-      &--active{
-        &::before{
+
+      &--active {
+        &::before {
           content: "";
           position: absolute;
           width: 5px;
@@ -42,4 +47,54 @@
       }
     }
   }
+  &__switch {
+    font-size: 17px;
+    position: relative;
+    display: inline-block;
+    width: 56px;
+    height: 23px;
+    input {
+      opacity: 0;
+      width: 0;
+      height: 0;
+    }
+    input:checked + .filter-product__slider {
+      background: @color-active;
+    }
+    input:focus + .filter-product__slider {
+      box-shadow: @filter-switch-box-shadow;
+    }
+    input:checked + .filter-product__slider:before {
+      transform: translateX(32px);
+    }
+    &-container{
+      padding: 16px;
+    }
+    &-title{
+      padding-top: 16px;
+    }
+  }
+  &__slider {
+    position: absolute;
+    cursor: pointer;
+    inset: 0;
+    background: @color-inactive;
+    border-radius: 50px;
+    transition: all 0.4s cubic-bezier(0.175, 0.885, 0.32, 1.275);
+    &::before {
+      position: absolute;
+      content: "";
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      height: 22px;
+      width: 22px;
+      inset: 0;
+      background-color: white;
+      border-radius: 50px;
+      box-shadow: @filter-switch-box-shadow-2;
+      transition: all 0.4s cubic-bezier(0.175, 0.885, 0.32, 1.275);
+    }
+  }
 }
+

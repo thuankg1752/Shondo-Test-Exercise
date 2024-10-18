@@ -18,5 +18,6 @@
     "Category A",
     "Category B",
     "Category C"
-]
+  ],
+  "isHot": false
 }

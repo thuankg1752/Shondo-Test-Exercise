@@ -1,17 +1,18 @@
 import React, { useEffect, useState } from 'react';
 import { ICategories, IProductFilterProps, TItemFilter } from '../../../constant/interface.ts';
 import './ProductFilter.less';
+import { Header } from '../../Header';
 
 
 export function ProductFilter ({ ...props }: IProductFilterProps) {
 
-  const { filterValue, isLoadingFilter, setFilterValue } = props;
+  const { filterValue, isLoadingFilter, openFilterMobile, setFilterValue, setOpenFilterMobile } = props;
   const [dataCategories, setDataCategories] = useState<ICategories>(
     {
       color: [],
       size: [],
       brand: [],
-      category: []
+      category: [],
     }
   );
 
@@ -31,6 +32,24 @@ export function ProductFilter ({ ...props }: IProductFilterProps) {
   return (
     <div className="filter-product__container">
       <div>
+        <Header.Hamburger toggleIcon={openFilterMobile} setToggleIcon={setOpenFilterMobile} />
+        <h2 className="filter-product__switch-title">
+          Hot items
+        </h2>
+        <div className="filter-product__switch-container">
+          <label className="filter-product__switch">
+            <input
+              type="checkbox" disabled={isLoadingFilter} checked={filterValue.isHot} onChange={(e) => {
+              const checked = e.target.checked;
+              setFilterValue({
+                ...filterValue,
+                isHot: checked
+              });
+            }}
+            />
+            <span className="filter-product__slider" />
+          </label>
+        </div>
         <FilterItem
           dataMap={dataCategories.color}
           title={'color'}

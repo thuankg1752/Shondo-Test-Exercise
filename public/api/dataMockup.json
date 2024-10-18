@@ -68,7 +68,7 @@
     "description": "Description for Product 2",
     "category": "Category B",
     "brand": "Brand Y",
-    "isHot": false,
+    "isHot": true,
     "price": 2000000,
     "discountPrice": 1900000,
     "colors": [
@@ -191,7 +191,7 @@
     "description": "Description for Product 5",
     "category": "Category B",
     "brand": "Brand Y",
-    "isHot": true,
+    "isHot": false,
     "price": 5000000,
     "discountPrice": 4900000,
     "colors": [
@@ -273,7 +273,7 @@
     "description": "Description for Product 7",
     "category": "Category A",
     "brand": "Brand X",
-    "isHot": true,
+    "isHot": false,
     "price": 7000000,
     "discountPrice": 6900000,
     "colors": [
@@ -355,7 +355,7 @@
     "description": "Description for Product 9",
     "category": "Category C",
     "brand": "Brand Z",
-    "isHot": true,
+    "isHot": false,
     "price": 9000000,
     "discountPrice": 8900000,
     "colors": [
@@ -395,7 +395,7 @@
     "description": "Description for Product 10",
     "category": "Category A",
     "brand": "Brand X",
-    "isHot": false,
+    "isHot": true,
     "price": 10000000,
     "discountPrice": 9900000,
     "colors": [

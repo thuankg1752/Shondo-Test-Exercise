@@ -1,6 +1,12 @@
+import React from 'react';
+
 export interface IImageProduct{
   id: number;
   url: string;
+}
+export interface IHumburgerProps {
+  toggleIcon: boolean;
+  setToggleIcon: React.Dispatch<React.SetStateAction<boolean>>;
 }
 export interface IProductItem {
   id: number,
@@ -36,16 +42,8 @@ export interface IProductFilterProps {
   isLoadingFilter: boolean;
   filterValue: IFilterValues;
   setFilterValue: (filter: IFilterValues) => void;
-}
-
-export interface TItemFilterColorSize {
-  color: string;
-  size: string;
-}
-
-export interface TItemFilterCateBrand {
-  brand: string;
-  category: string;
+  openFilterMobile: boolean;
+  setOpenFilterMobile: React.Dispatch<React.SetStateAction<boolean>>;
 }
 
 export interface TItemFilter {
@@ -68,4 +66,5 @@ export interface IFilterValues {
   category: string[];
   color: string[];
   size: number[];
+  isHot: boolean;
 }

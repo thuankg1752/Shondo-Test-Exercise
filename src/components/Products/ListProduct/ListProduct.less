@@ -1,16 +1,67 @@
 @import '../../../style/variables.less';
-.list-product{
-  &__container{
+@import "../../../style/_mixins.less";
+
+.list-product {
+  &__container {
     position: relative;
     display: grid;
     grid-template-rows: auto 1fr;
     grid-template-columns: 296px 1fr;
-    grid-template-areas:"list-product__container";
+    grid-template-areas:"filter block";
+    .media(laptop, {
+      grid-template-areas:
+        'filter'
+        'block';
+      grid-template-rows: auto 1fr;
+      grid-template-columns: 1fr;
+    });
   }
-  &__block{
+
+  &__action-sort-filter {
+    .media(laptop, {
+      display: flex;
+      gap: 16px;
+    });
+  }
+
+  &__filter {
+    grid-area: filter;
+    background: @color-white;
+    .media(laptop, {
+      position: absolute;
+      opacity: 0;
+      transform: translateX(-100%);
+      transition: opacity 0.3s ease, transform 0.3s ease;
+    });
+
+    &-mobile {
+      display: none;
+      .media(laptop, {
+        display: block;
+        border: 1px solid @product-item-border-color;
+        box-shadow: @product-item-box-shadow;
+        height: 34px;
+        border-radius: 10px;
+        padding: 0 5px;
+        background: @color-white;
+      });
+    }
+
+    &--open {
+      .media(laptop, {
+        opacity: 1;
+        transform: translateX(0);
+        z-index: 1;
+      });
+    }
+  }
+
+  &__block {
     min-height: 1050px;
+    grid-area: block;
   }
-  &__item{
+
+  &__item {
     display: flex;
     flex-wrap: wrap;
     gap: 16px;
@@ -18,13 +69,21 @@
     margin: 0 auto;
     padding: 16px;
   }
-  &__sort{
-    &-bar{
+
+  &__sort {
+    &-bar {
       display: flex;
       align-items: center;
       padding: 16px 16px 0 16px;
+      .media(laptop, {
+        flex-direction: column;
+        justify-content: center;
+        align-items: start;
+        gap: 10px;
+      });
     }
-    &-title{
+
+    &-title {
       font-size: 16px;
       font-weight: 500;
       color: @product-item-name;

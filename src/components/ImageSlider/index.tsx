@@ -24,8 +24,15 @@ const ImageSlider: React.FC<IListImageProps> = ({ ...props }: IListImageProps) =
 
   return (
     <div className="image-slider__container">
-      <img loading={'lazy'} src={activeImage.url ?? ''} alt={activeImage.url ?? ''} />
-      <div>
+      <div className="image-slider__main-image-container">
+        <img
+          className="image-slider__main-image"
+          loading={'lazy'}
+          src={activeImage.url ?? ''}
+          alt={activeImage.url ?? ''}
+        />
+      </div>
+      <div className="image-slider__sub-image-container">
         <div className="image-slider__list-image">
           {listUrl.map((item, index) => (
             <div className={`${activeImage.id === item.id ? 'image-slider__item--active' : ''}`}>
@@ -34,7 +41,7 @@ const ImageSlider: React.FC<IListImageProps> = ({ ...props }: IListImageProps) =
                 key={index}
                 alt={item.url}
                 onClick={() => handleImageClick(item, index)}
-                className="image-slider__item"
+                className="image-slider__item image-slider__sub-image"
               />
             </div>
           ))}

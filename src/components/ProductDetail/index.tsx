@@ -17,7 +17,8 @@ const ProductDetail: React.FC = () => {
       brand: [],
       category: [],
       color: [],
-      size: []
+      size: [],
+      isHot: false
     }
   );
   const [productDetail, setProductDetail] = useState<IProductItem>({
@@ -53,7 +54,7 @@ const ProductDetail: React.FC = () => {
     }, TIME_LOADING * 2);
   }, [productId]);
 
-  return ( loading ? <Spin /> : <section className="product-detail__container">
+  return ( loading ? <Spin /> : <div className="product-detail__container">
     <div className="product-detail__gallery">
       <ImageSlider listUrl={productDetail.image}/>
     </div>
@@ -63,7 +64,7 @@ const ProductDetail: React.FC = () => {
             <span>
               {productDetail.name}
             </span>
-          <p className={`${productDetail.isHot ? 'product-detail__item--hot' : 'product-detail__item--not-hot'}`}>🔥</p>
+          {productDetail.isHot && <p className="product-detail__item--hot">🔥</p>}
         </h1>
       </div>
       <div className="product-detail__product-brand">
@@ -128,7 +129,7 @@ const ProductDetail: React.FC = () => {
         ))}
       </div>
     </div>
-  </section> );
+  </div> );
 };
 
 export default ProductDetail;
