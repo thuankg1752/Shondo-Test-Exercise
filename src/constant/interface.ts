@@ -1,6 +1,10 @@
+export interface IImageProduct{
+  id: number;
+  url: string;
+}
 export interface IProductItem {
   id: number,
-  image: string[],
+  image: IImageProduct[],
   name: string,
   description: string,
   category: string,

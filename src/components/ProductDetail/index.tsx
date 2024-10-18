@@ -6,6 +6,7 @@ import Spin from '../Spin';
 import { ProductFilter } from '../Products/ProductFilter';
 import { formatToVND, valueDiscountPercent } from '../../helper';
 import ProductItem from '../Products/ProductItem';
+import ImageSlider from '../ImageSlider';
 
 const ProductDetail: React.FC = () => {
   const productId = window.location.pathname.split('/')[2];
@@ -52,9 +53,9 @@ const ProductDetail: React.FC = () => {
     }, TIME_LOADING * 2);
   }, [productId]);
 
-
   return ( loading ? <Spin /> : <section className="product-detail__container">
-    <div style={{ width: 400, height: 400, gridArea:'gallery' }}>
+    <div className="product-detail__gallery">
+      <ImageSlider listUrl={productDetail.image}/>
     </div>
     <div className="product-detail__main-content">
       <div className="product-detail__product-name">

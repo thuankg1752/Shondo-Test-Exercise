@@ -1,0 +1,35 @@
+@import "../../style/variables.less";
+.image-slider {
+  &__container {
+    img {
+      width: 100%;
+    }
+  }
+
+  &__list-image {
+    display: flex;
+    gap: 16px;
+    overflow-x: auto;
+    position: relative;
+  }
+
+  &__item {
+    width: 160px !important;
+    cursor: pointer;
+
+    &--active {
+      position: relative;
+      &::before {
+        content: 'In view';
+        padding: 4px;
+        position: absolute;
+        width: fit-content;
+        background-color: @product-background-view-image;
+        color: @color-white;
+        z-index: 1;
+        top: 0;
+        right: 0;
+      }
+    }
+  }
+}
