@@ -1,20 +1,31 @@
 @import "../../style/variables.less";
+@import "../../style/_mixins";
 .image-slider {
   &__container {
-    img {
-      width: 100%;
+    display: flex;
+    gap: 10px;
+    flex-direction: column;
+    width: 100%;
+  }
+  &__main-image {
+    width: 100%;
+    .media(tablet, {
+      width:100%;
+    });
+    &-container{
+      display: flex;
     }
   }
-
   &__list-image {
     display: flex;
     gap: 16px;
     overflow-x: auto;
     position: relative;
+    width: 100%;
   }
 
   &__item {
-    width: 160px !important;
+    width: 160px;
     cursor: pointer;
 
     &--active {

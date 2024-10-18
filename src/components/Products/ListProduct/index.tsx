@@ -15,12 +15,14 @@ const ListProduct: React.FC = () => {
   const [loading, setLoading] = useState<boolean>(false);
   const [loadingMainContent, setLoadingMainContent] = useState<boolean>(false);
   const [sortBy, setSortBy] = useState('default');
+  const [openFilterMobile, setOpenFilterMobile] = useState<boolean>(false);
   const [filterValue, setFilterValue] = useState<IFilterValues>(
     {
       brand: [],
       category: [],
       color: [],
-      size: []
+      size: [],
+      isHot: false
     }
   );
   // logic pagination
@@ -68,7 +70,7 @@ const ListProduct: React.FC = () => {
   }, [sortBy]);
 
   useEffect(() => {
-    if (filterValue.brand.length > 0 || filterValue.category.length > 0 || filterValue.color.length > 0 || filterValue.size.length > 0) {
+    if (filterValue.brand.length > 0 || filterValue.category.length > 0 || filterValue.color.length > 0 || filterValue.size.length > 0 || filterValue.isHot || !filterValue.isHot) {
       setLoadingMainContent(true);
       setTimeout(() => {
         const filterItems: IProductItem[] = productFromApi.filter((productItem) => {
@@ -76,7 +78,8 @@ const ListProduct: React.FC = () => {
             ( filterValue.brand.length === 0 || filterValue.brand.includes(productItem.brand) ) &&
             ( filterValue.category.length === 0 || filterValue.category.includes(productItem.category) ) &&
             ( filterValue.color.length === 0 || filterValue.color.some(color => productItem.colors.includes(color)) ) &&
-            ( filterValue.size.length === 0 || filterValue.size.some(size => productItem.sizes.includes(size)) )
+            ( filterValue.size.length === 0 || filterValue.size.some(size => productItem.sizes.includes(size)) ) &&
+            ( !filterValue.isHot || productItem.isHot )
           );
         });
         setProductItems(filterItems);
@@ -105,15 +108,27 @@ const ListProduct: React.FC = () => {
   return (
     <React.Fragment>{loading ? <Spin /> :
       <section className="list-product__container">
-        <ProductFilter
-          isLoadingFilter={loadingMainContent}
-          filterValue={filterValue}
-          setFilterValue={setFilterValue}
-        />
+        <div className={`list-product__filter ${openFilterMobile ? 'list-product__filter--open' : ''}`}>
+          <ProductFilter
+            isLoadingFilter={loadingMainContent}
+            filterValue={filterValue}
+            openFilterMobile={openFilterMobile}
+            setOpenFilterMobile={setOpenFilterMobile}
+            setFilterValue={setFilterValue}
+          />
+        </div>
         <div className="list-product__block">
           <div className="list-product__sort-bar">
             <p className="list-product__sort-title">View {ITEM_PER_PAGE} in {productItems.length} products </p>
-            <ProductSortPrice sortBy={sortBy} setSortBy={setSortBy} />
+            <div className="list-product__action-sort-filter">
+              <button
+                className="list-product__filter-mobile" onClick={() => {
+                setOpenFilterMobile(!openFilterMobile);
+              }}
+              >Filter
+              </button>
+              <ProductSortPrice sortBy={sortBy} setSortBy={setSortBy} />
+            </div>
           </div>
           <div className="list-product__item">
             {loadingMainContent ? <Spin /> : currentItems.map((productItem) => (

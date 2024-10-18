@@ -1,14 +1,27 @@
 @import "../../../style/variables";
+@import "../../../style/_mixins.less";
 
 .sort-price {
   &__container {
     width: fit-content;
     margin-left: auto;
+    .media(laptop, {
+      margin-left: unset !important;
+    });
+  }
+
+  &__title {
+    .media(laptop, {
+      display: none;
+    });
   }
 
   &__box {
+    border: 1px solid @product-item-border-color;
+    box-shadow: @product-item-box-shadow;
     height: 34px;
     border-radius: 10px;
     padding: 0 5px;
+    background: @color-white;
   }
 }

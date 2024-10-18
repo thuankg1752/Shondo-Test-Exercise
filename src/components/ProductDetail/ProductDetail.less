@@ -1,5 +1,5 @@
 @import '../../style/variables.less';
-
+@import "../../style/_mixins.less";
 .product-detail {
   &__container {
     display: grid;
@@ -9,7 +9,17 @@
         'gallery gallery gallery main-content main-content main-content'
         'description description description description same-brand same-brand';
     grid-template-columns: 1fr 1fr 1fr 1fr 3fr;
-
+    .media(laptop, {
+      //grid-template-areas:
+      //  'gallery'
+      //  'main-content'
+      //  'description'
+      //  'same-brand';
+      //grid-template-rows: auto 1fr;
+      //grid-template-columns: 1fr;
+      display: flex;
+      flex-direction: column;
+    });
     .filter-product {
       &__item-block {
         width: fit-content !important;
@@ -23,6 +33,7 @@
   }
 
   &__gallery {
+    width: 100%;
     grid-area: gallery;
   }
 
@@ -138,6 +149,10 @@
   &__action-container {
     display: flex;
     gap: 16px;
+    .media(laptop, {
+      flex-direction: column;
+      gap: 8px;
+    });
   }
 
   &__quantity {

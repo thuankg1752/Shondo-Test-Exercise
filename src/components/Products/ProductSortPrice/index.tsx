@@ -9,7 +9,7 @@ const ProductSortPrice: React.FC<ISortBar> = ({ ...props }: ISortBar) => {
 
   return (
     <div className="sort-price__container">
-      Sort by: &nbsp;
+      <span className="sort-price__title">Sort by: &nbsp;</span>
       <select
         className="sort-price__box"
         value={sortBy}

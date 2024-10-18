@@ -1,0 +1,27 @@
+@screen-sm-min: 576px;
+@screen-md-min: 768px;
+@screen-lg-min: 992px;
+@screen-xl-min: 1200px;
+
+.media( @size, @content ) {
+  & when ( @size = mobile ) {
+    @media only screen and (max-width: @screen-sm-min) {
+      @content();
+    }
+  }
+  & when ( @size = tablet ) {
+    @media only screen and (max-width: @screen-md-min) {
+      @content();
+    }
+  }
+  & when ( @size = laptop ) {
+    @media only screen and (max-width: @screen-lg-min) {
+      @content();
+    }
+  }
+  & when ( @size = desktop ) {
+    @media only screen and (min-width: @screen-xl-min) {
+      @content();
+    }
+  }
+}

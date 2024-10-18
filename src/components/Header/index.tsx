@@ -1,5 +1,6 @@
 import React, { createContext, useState } from 'react';
 import './Header.less';
+import { IHumburgerProps } from '../../constant/interface.ts';
 
 type HeaderDirectLink = {
   name: string;
@@ -53,7 +54,7 @@ export function Header(props: HeaderProps) {
   );
 };
 const HeaderLogo: React.FC = () => {
-  return <div className="header__logo">MyShop</div>;
+  return <div className="header__logo"><a href={'/'}>MyShop</a></div>;
 };
 
 
@@ -72,16 +73,19 @@ const HeaderNav = () => {
   );
 };
 
-function HeaderHamburger() {
+function HeaderHamburger({ ...props }: IHumburgerProps) {
+  const { toggleIcon, setToggleIcon } = props;
+
   const { toggle, setToggle } = React.useContext(HeaderContext);
 
   return (
     <div
       className="header__hamburger" onClick={() => {
       setToggle(!toggle);
+      setToggleIcon(!toggleIcon);
     }}
     >
-      {toggle ? (
+      {toggle || toggleIcon ? (
         <React.Fragment>
           <span className="header__hamburger-line header__hamburger-line--top"></span>
           <span className="header__hamburger-line header__hamburger-line--middle"></span>

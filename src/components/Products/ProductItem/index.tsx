@@ -10,15 +10,26 @@ interface IProductItemProps {
 
 const ProductItem: React.FC<IProductItemProps> = ({ ...props }: IProductItemProps) => {
   const { productItem } = props;
-  const { id, image, name, description, price, discountPrice } = productItem;
+  const { id, image, name, description, price, discountPrice, isHot } = productItem;
 
   return (
     <div id={id.toString()} className="product-item__container">
+      {isHot &&
+        <span className="product-item__product-hot">
+          Item Hot
+          <span className="product-item__item--hot">🔥</span>
+        </span>}
       <a href={`${CLIENT_ROUTE_PATH.PRODUCT_DETAIL}/${id}`}>
+
         <img src={`${image[0].url}`} alt={`${image[0].url}`} loading="lazy" className="product-item__image" />
       </a>
       <div className="product-item__info-container">
-        <a href={`${CLIENT_ROUTE_PATH.PRODUCT_DETAIL}/${id}`} className="product-item__name">{name}</a>
+
+        <p className="product-item__name">
+          <a href={`${CLIENT_ROUTE_PATH.PRODUCT_DETAIL}/${id}`} >{name}</a>
+        </p>
+
+
         <p className="product-item__description">{description}</p>
         <div className="product-item__price-box">
           <p className="product-item__price">{formatToVND(price)}</p>
